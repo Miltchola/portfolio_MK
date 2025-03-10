@@ -1,0 +1,202 @@
+/* Estilização */
+
+/* HEADER */
+header {
+    background: #152A40;
+    color: #D0C7C4; 
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 30px;
+    border-bottom: 2px solid #315FC6; 
+}
+
+.logo-MKM {
+    height: 40px;
+    width: auto;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #D0C7C4; 
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Roboto Mono', monospace;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #315FC6; /* Brilha quando passa o mouse */
+}
+
+/* BODY */
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #D0C7C4; 
+    background-color: #152A40; 
+}
+
+.hero {
+    background: #152A40; 
+    color: #D0C7C4;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #315FC6;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.imagem-milton {
+    margin-top: 20px;
+    height: 250px;
+    width: auto;
+}
+
+.imagem-projeto {
+    margin-top: 20px;
+    height: 400px;
+    width: auto;
+}
+
+hr {
+    width: 90vw;
+    height: 3px;
+    color: #315FC6;
+    background-color: #315FC6;
+    border: none;
+}
+
+section {
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 800px;
+}
+
+.about-text {
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #315FC6; /* Bright blue for section headings */
+    font-family: 'Orbitron', sans-serif;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.project {
+    background: #1a1a1a; /* Slightly darker background for contrast */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid #315FC6; /* Bright blue border */
+}
+
+.project h3 {
+    margin-top: 0;
+    color: #315FC6; /* Bright blue for project titles */
+    font-family: 'Orbitron', sans-serif;
+}
+
+.project p {
+    color: #D0C7C4; /* Light gray for project descriptions */
+    font-family: 'Roboto Mono', monospace;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #315FC6; /* Bright blue */
+    color: #152A40; /* Dark blue text */
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.project-link:hover {
+    background: #1a3f8f; /* Darker blue on hover */
+}
+
+/* CONTATO */
+
+.contact-me {
+    text-align: center;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-form input, #contact-form textarea {
+    padding: 0.5rem;
+    border: 1px solid #315FC6; /* Bright blue border */
+    border-radius: 5px;
+    background: #1a1a1a; /* Dark background for inputs */
+    color: #D0C7C4; /* Light gray text */
+    font-family: 'Roboto Mono', monospace;
+}
+
+#contact-form button {
+    padding: 0.5rem;
+    background: #315FC6; /* Bright blue */
+    color: #152A40; /* Dark blue text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#contact-form button:hover {
+    background: #1a3f8f; /* Darker blue on hover */
+}
+
+
+/* FOOTER */
+footer {
+    background: #152A40; /* Dark blue */
+    color: #D0C7C4; /* Light gray */
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-family: 'Roboto Mono', monospace;
+    border-top: 2px solid #315FC6; /* Bright blue accent */
+}
