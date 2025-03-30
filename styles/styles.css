@@ -1,15 +1,14 @@
-/* Estilização */
-
 /* HEADER */
 header {
     background: #152A40;
-    color: #D0C7C4; 
+    color: #D0C7C4;
     padding: 1rem 0;
     text-align: center;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 8px 30px;
-    border-bottom: 2px solid #315FC6; 
+    border-bottom: 2px solid #315FC6;
 }
 
 .logo-MKM {
@@ -28,7 +27,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #D0C7C4; 
+    color: #D0C7C4;
     text-decoration: none;
     font-weight: bold;
     font-family: 'Roboto Mono', monospace;
@@ -36,55 +35,65 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #315FC6; /* Brilha quando passa o mouse */
+    color: #315FC6;
+}
+
+/* Responsividade do Header */
+@media screen and (max-width: 768px) {
+    header {
+        justify-content: center;
+    }
+    nav {
+        display: none;
+    }
 }
 
 /* BODY */
-
 body {
     font-family: 'Orbitron', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #D0C7C4; 
-    background-color: #152A40; 
+    color: #D0C7C4;
+    background-color: #152A40;
 }
 
 .hero {
-    background: #152A40; 
-    color: #D0C7C4;
     padding: 4rem 2rem;
     text-align: center;
 }
 
 .hero h1 {
-    margin: 0;
-    font-size: 3rem;
-    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
     color: #315FC6;
 }
 
 .hero p {
     font-size: 1.2rem;
-    font-family: 'Roboto Mono', monospace;
 }
+
 
 .imagem-milton {
     margin-top: 20px;
-    height: 250px;
-    width: auto;
+    max-width: 40%;
+    height: auto;
+}
+
+.tecnologias {
+    max-width: 80%;
+    margin-top: 28px;
+    height: auto;
 }
 
 .imagem-projeto {
     margin-top: 20px;
-    height: 400px;
-    width: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 hr {
     width: 90vw;
     height: 3px;
-    color: #315FC6;
     background-color: #315FC6;
     border: none;
 }
@@ -93,20 +102,22 @@ section {
     padding: 2rem;
     margin: 1rem auto;
     max-width: 800px;
+    text-align: center;
 }
 
 .about-text {
     font-family: 'Roboto Mono', monospace;
     text-align: center;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #315FC6; /* Bright blue for section headings */
+    color: #315FC6;
     font-family: 'Orbitron', sans-serif;
+    margin-bottom: 1.5rem;
 }
 
 .projects-grid {
@@ -116,31 +127,29 @@ h2 {
 }
 
 .project {
-    background: #1a1a1a; /* Slightly darker background for contrast */
+    background: #1a1a1a;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
-    border: 1px solid #315FC6; /* Bright blue border */
+    border: 1px solid #315FC6;
 }
 
 .project h3 {
-    margin-top: 0;
-    color: #315FC6; /* Bright blue for project titles */
+    color: #315FC6;
     font-family: 'Orbitron', sans-serif;
 }
 
 .project p {
-    color: #D0C7C4; /* Light gray for project descriptions */
+    color: #D0C7C4;
     font-family: 'Roboto Mono', monospace;
 }
 
-.project-link {
-    display: inline-block;
-    margin-top: 1rem;
+.project-link, .view-project {
+    margin-top: 1.4rem;
     padding: 0.5rem 1rem;
-    background: #315FC6; /* Bright blue */
-    color: #152A40; /* Dark blue text */
+    background: #315FC6;
+    color: #152A40;
     text-decoration: none;
     border-radius: 5px;
     font-family: 'Roboto Mono', monospace;
@@ -148,55 +157,20 @@ h2 {
     transition: background 0.3s ease;
 }
 
-.project-link:hover {
-    background: #1a3f8f; /* Darker blue on hover */
+.project-link:hover, .view-project:hover {
+    background: #1a3f8f;
 }
 
-/* CONTATO */
-
-.contact-me {
-    text-align: center;
+/* Responsividade do About */
+@media screen and (max-width: 600px) {
+    .about-text {
+        text-align: justify;
+    }
 }
-
-#contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#contact-form input, #contact-form textarea {
-    padding: 0.5rem;
-    border: 1px solid #315FC6; /* Bright blue border */
-    border-radius: 5px;
-    background: #1a1a1a; /* Dark background for inputs */
-    color: #D0C7C4; /* Light gray text */
-    font-family: 'Roboto Mono', monospace;
-}
-
-#contact-form button {
-    padding: 0.5rem;
-    background: #315FC6; /* Bright blue */
-    color: #152A40; /* Dark blue text */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-#contact-form button:hover {
-    background: #1a3f8f; /* Darker blue on hover */
-}
-
 
 /* FOOTER */
 footer {
-    background: #152A40; /* Dark blue */
-    color: #D0C7C4; /* Light gray */
     text-align: center;
     padding: 1rem 0;
-    margin-top: 2rem;
-    font-family: 'Roboto Mono', monospace;
-    border-top: 2px solid #315FC6; /* Bright blue accent */
+    font-size: 0.9rem;
 }
