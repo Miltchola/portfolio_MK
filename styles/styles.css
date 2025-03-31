@@ -89,6 +89,8 @@ body {
 }
 
 .tecnologias {
+    border-radius: 12px;
+    padding: 12px;
     max-width: 80%;
     margin-top: 28px;
     height: auto;
