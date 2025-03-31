@@ -76,19 +76,39 @@ body {
 .imagem-milton {
     margin-top: 20px;
     max-width: 40%;
+    border-radius: 50%;
     height: auto;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease, border-radius 0.5s ease, transform 0.5s ease;
+}
+
+.imagem-milton:hover {
+    border-radius: 20px;
+    transform: scale(1.05) translateY(-10px); /* Faz a imagem "flutuar" para cima */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Dá um efeito de elevação */
 }
 
 .tecnologias {
     max-width: 80%;
     margin-top: 28px;
     height: auto;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease, transform 0.5s ease;
+}
+.tecnologias:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Dá um efeito de elevação */
 }
 
 .imagem-projeto {
     margin-top: 20px;
     max-width: 100%;
     height: auto;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+.imagem-projeto:hover {
+    transform: scale(1.05) translateY(-10px);
 }
 
 hr {
@@ -133,6 +153,13 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
     border: 1px solid #315FC6;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: scale(1.05) translateY(-5px); /* Aumenta levemente o tamanho e faz "flutuar" */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Dá um efeito de elevação */
 }
 
 .project h3 {
