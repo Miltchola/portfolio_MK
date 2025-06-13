@@ -1,29 +1,35 @@
 /* HEADER */
 header {
-    background: #152A40;
+    background: rgba(21, 42, 64, 0.95);
     color: #D0C7C4;
-    padding: 1rem 0;
-    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 30px;
-    border-bottom: 2px solid #315FC6;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-MKM {
-    height: 40px;
+    height: 45px;
     width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo-MKM:hover {
+    transform: scale(1.05);
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: flex;
+    gap: 2rem;
 }
 
 header nav ul li a {
@@ -31,11 +37,15 @@ header nav ul li a {
     text-decoration: none;
     font-weight: bold;
     font-family: 'Roboto Mono', monospace;
-    transition: color 0.3s ease;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 header nav ul li a:hover {
     color: #315FC6;
+    background: rgba(49, 95, 198, 0.1);
 }
 
 /* Responsividade do Header */
@@ -56,36 +66,82 @@ body {
     line-height: 1.6;
     color: #D0C7C4;
     background-color: #152A40;
+    padding-top: 80px;
 }
 
 .hero {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(180deg, rgba(21, 42, 64, 0.95) 0%, rgba(21, 42, 64, 0.8) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(49, 95, 198, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.hero > div {
+    position: relative;
+    z-index: 1;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     color: #315FC6;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease 0.2s;
+    animation-fill-mode: both;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .imagem-milton {
     margin-top: 20px;
-    max-width: 40%;
+    max-width: 300px;
     border-radius: 50%;
     height: auto;
     cursor: pointer;
-    transition: box-shadow 0.5s ease, border-radius 0.5s ease, transform 0.5s ease;
+    transition: all 0.5s ease;
+    border: 4px solid rgba(49, 95, 198, 0.3);
+    animation: fadeInUp 1s ease 0.4s;
+    animation-fill-mode: both;
 }
 
 .imagem-milton:hover {
     border-radius: 20px;
-    transform: scale(1.05) translateY(-10px); /* Faz a imagem "flutuar" para cima */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Dá um efeito de elevação */
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 8px 32px rgba(49, 95, 198, 0.3);
+    border-color: #315FC6;
 }
 
 .tecnologias {
@@ -95,11 +151,14 @@ body {
     margin-top: 28px;
     height: auto;
     cursor: pointer;
-    transition: box-shadow 0.5s ease, transform 0.5s ease;
+    transition: all 0.5s ease;
+    animation: fadeInUp 1s ease 0.6s;
+    animation-fill-mode: both;
 }
+
 .tecnologias:hover {
     transform: scale(1.05) translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Dá um efeito de elevação */
+    box-shadow: 0 8px 32px rgba(49, 95, 198, 0.3);
 }
 
 .imagem-projeto {
@@ -144,50 +203,79 @@ h2 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
 .project {
-    background: #1a1a1a;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: rgba(26, 26, 26, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    border: 1px solid #315FC6;
+    border: 1px solid rgba(49, 95, 198, 0.2);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #315FC6, transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .project:hover {
-    transform: scale(1.05) translateY(-5px); /* Aumenta levemente o tamanho e faz "flutuar" */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Dá um efeito de elevação */
+    transform: translateY(-10px);
+    box-shadow: 0 8px 32px rgba(49, 95, 198, 0.2);
+    border-color: #315FC6;
+}
+
+.project:hover::before {
+    opacity: 1;
 }
 
 .project h3 {
     color: #315FC6;
     font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .project p {
     color: #D0C7C4;
     font-family: 'Roboto Mono', monospace;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
-.project-link, .view-project {
-    margin-top: 1.4rem;
-    padding: 0.5rem 1rem;
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
     background: #315FC6;
-    color: #152A40;
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
-.project-link:hover, .view-project:hover {
-    background: #1a3f8f;
+.project-link:hover {
+    background: transparent;
+    border-color: #315FC6;
+    color: #315FC6;
 }
 
 /* Responsividade do About */
@@ -200,6 +288,85 @@ h2 {
 /* FOOTER */
 footer {
     text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
+    padding: 2rem 0;
+    background: rgba(21, 42, 64, 0.95);
+    margin-top: 4rem;
+    border-top: 1px solid rgba(49, 95, 198, 0.2);
+}
+
+footer p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    color: #D0C7C4;
+}
+
+#contact {
+    background: linear-gradient(180deg, rgba(21, 42, 64, 0.8) 0%, rgba(21, 42, 64, 0.95) 100%);
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    margin: 4rem auto;
+    max-width: 800px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-me {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-me p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.1rem;
+    padding: 1rem;
+    background: rgba(49, 95, 198, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.contact-me p:hover {
+    background: rgba(49, 95, 198, 0.2);
+    transform: translateY(-5px);
+}
+
+/* Responsive Design Improvements */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-me {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .imagem-milton {
+        max-width: 250px;
+    }
 }
